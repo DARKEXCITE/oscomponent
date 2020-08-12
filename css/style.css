@@ -479,6 +479,13 @@ body {
 .header-nav__item a {
   text-transform: uppercase;
   color: #567A8A;
+  -webkit-transition: color .2s ease;
+  -o-transition: color .2s ease;
+  transition: color .2s ease;
+}
+
+.header-nav__item a:hover {
+  color: #2f424b;
 }
 
 .header-nav__item:not(:last-child) {
@@ -522,6 +529,7 @@ body {
   text-transform: uppercase;
   color: #81ACBF;
   background: url("../img/header/search.svg") no-repeat left 8px top 6px;
+  border-radius: 5px;
 }
 
 .header__search #headerSearch::-webkit-input-placeholder {
@@ -637,6 +645,7 @@ body {
   width: 100%;
   height: 354px;
   background: url("../img/header/banner.jpg") no-repeat center;
+  border-radius: 5px;
 }
 
 .services {
@@ -875,7 +884,6 @@ body {
 .footer__privacy-politic {
   font-family: 'PT Sans Narrow', sans-serif;
   font-weight: normal;
-  font-size: 14px;
   line-height: 1.5;
   color: #B7D7E4;
   max-width: 220px;
