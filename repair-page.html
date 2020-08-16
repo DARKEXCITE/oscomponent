@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-   <title>OS Component - Главная</title>
-   <link rel="stylesheet" href="css/style.min.css">
+   <title>OS Component - Статус ремонта</title>
+   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-   <header class="header">
+<header class="header">
    <div class="header__top">
       <div class="container">
             <div class="header__top__container">
@@ -89,51 +89,25 @@
       <div class="header__banner"></div>
    </div>
 </header>
-   <div class="services">
-   <div class="container">
-      <div class="services__container">
-         <div class="services__item">
-            <img src="img/services/tablet.png" alt="Авторизованный Сервисный Центр" class="services__img">
+<section class="repair-check">
+   <div class="repair-check__container">
+      <h3 class="repair-check__title">Проверка статуса ремонта</h3>
 
-            <div class="services__desc">
-               <a href="#!"><h3 class="services__title">Авторизованный Сервисный Центр</h3></a>
-               <a href="#!"><p class="services__text">
-                  В нашем портфеле большое количество авторизаций самых популярных IT брендов,
-                  что позволяет бесплатно обслуживать вашу гарантийную технику, а также,
-                  осуществлять поддержку на платной основе.
-               </p></a>
-            </div>
-         </div>
-
-         <div class="services__item">
-            <img src="img/services/board.png" alt="Обслуживание" class="services__img">
-
-            <div class="services__desc">
-               <a href="#!"><h3 class="services__title">Обслуживание</h3></a>
-               <a href="#!"><p class="services__text">
-                  Мы готовы к сотрудничеству с любыми сферами ведения бизнеса.
-                  Любые пожелания - от установки и настройки ПО, до организации сети
-                  видеонаблюдения на вашем производственном объекте или офисе.
-               </p></a>
-            </div>
-         </div>
-
-         <div class="services__item">
-            <img src="img/services/diagram.png" alt="Интеграции" class="services__img">
-
-            <div class="services__desc">
-               <a href="#!"><h3 class="services__title">Интеграции</h3></a>
-               <a href="#!"><p class="services__text">
-                  Нет необходимости искать подходящие решение для вашего проекта -
-                  мы занимаемся разработкой большого числа крупных интеграций и в точности знаем,
-                  что вам подойдет.
-               </p></a>
-            </div>
-         </div>
+      <div class="repair-check__description">
+         <span class="repair-check__subtitle">Узнайте статус вашего ремонта:</span>
+         <p class="repair-check__text">Введите номер ремонтной квитанции (Например: Rey1234567) и проверочный код.
+            (данные находятся в выданной Вам в сервисном центре ремонтной квитанции)
+         </p>
       </div>
+
+      <form class="repair-check__form">
+         <input type="text" class="repair-check__input" placeholder="№ РЕМОНТА">
+         <input type="text" class="repair-check__input" placeholder="КОД">
+         <input type="button" class="repair-check__button" value="ПОИСК">
+      </form>
    </div>
-</div>
-   <div class="news">
+</section>
+<div class="news">
    <div class="container">
       <h3 class="news__title"><a href="#!">Новости</a></h3>
       <div class="news__posts">
@@ -165,30 +139,7 @@
       </div>
    </div>
 </div>
-   <div class="popup" id="repairPopup">
-   <div class="popup__body">
-      <div class="popup__content repair-popup__content">
-         <a href="#!" class="popup__close">
-            <svg width="17" height="14" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-               <line x1="15.9994" y1="13.2387" x2="0.678518" y2="0.382982" stroke="#486F7F"/>
-               <line x1="15.6422" y1="0.383022" x2="0.321306" y2="13.2388" stroke="#486F7F"/>
-            </svg>
-         </a>
-         <h3 class="repair-popup__title">Оставить заявку на ремонт</h3>
-
-         <form class="repair-popup__form">
-            <input type="text" placeholder="ИМЯ">
-            <input type="number" placeholder="ТЕЛЕФОН">
-            <input type="text" placeholder="МОДЕЛЬ УСТРОЙСТВА">
-            <textarea placeholder="НЕИСПРАВНОСТЬ"></textarea>
-            <input type="button" value="ОСТАВИТЬ ЗАЯВКУ">
-         </form>
-
-         <div class="repair-popup__description">Оставьте заявку и мы с вами свяжемся!</div>
-      </div>
-   </div>
-</div>
-   <footer class="footer">
+<footer class="footer">
    <div class="container">
       <div class="footer__container">
          <div class="footer__info">
@@ -250,6 +201,5 @@
       <div class="footer__copyright">&copy; OS Component 2020 г.</div>
    </div>
 </footer>
-   <script src="js/script.min.js"></script>
 </body>
 </html>
