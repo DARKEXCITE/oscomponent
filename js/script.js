@@ -1,3 +1,4 @@
+
 // Проверка браузера на поддержку webP
 function testWebP(callback) {
 
@@ -235,25 +236,46 @@ document.addEventListener('keydown', e => {
         popupClose(popupActive);
     }
 })
+$("#sendRepairPopupForm").on("click", function () {
+    let model = $("#userModel").val().trim();
+    let name = $("#userName").val().trim();
+    let phone = $("#userPhone").val().trim();
+    let message = $("#userMessage").val().trim();
 
-(function () {
-    if (!Element.pototype.closest) {
-        Element.prototype.closest = function (css) {
-            var node = this;
-            while (node) {
-                if (node.matches(css)) return node;
-                else node = node.parentElement;
-            }
-            return null;
+    if (model === '') {
+        swal("Упс... Ошибка!", "Укажите модель устройства!", "warning");
+        return false;
+    } else if (name === '') {
+        swal("Упс... Ошибка!", "Укажите Ваше имя!", "warning");
+        return false;
+    } else if (phone === '') {
+        swal("Упс... Ошибка!", "Укажите Ваше номер телефона!", "warning");
+        return false;
+    } else if (message === '') {
+        swal("Упс... Ошибка!", "Напишите нам сообщение!", "warning");
+        return false;
+    }
+
+
+    $.ajax({
+        url: 'libs/mail.php',
+        type: 'POST',
+        cache: false,
+        data: {name, model, phone, message},
+        dataType: 'html',
+        beforeSend: function () {
+            $('#sendRepairPopupForm').prop('disabled', true);
+        },
+        success: function (data) {
+            if (!data)
+                swal("Упс... Ошибка!", "Произошла ошибка при отправке данных!", "error");
+            else
+                $('form#repairPopupForm').trigger('reset');
+            swal("Ваша заявка была отправлена!", "Мы с Вами обязательно свяжимся!", "success");
+            $('#sendRepairPopupForm').prop('disabled', false);
+            $('form#repairPopupForm').trigger('reset');
+            document.getElementById('repairPopup').classList.remove('open');
+            document.getElementsByTagName('body').classList.remove('lock');
         }
-    }
-})();
-
-(function () {
-    if (!Element.pototype.matches) {
-        Element.prototype.matches = Element.prototype.matchesSelector ||
-            Element.prototype.webkitMatchesSelector ||
-            Element.prototype.mozMatchesSelector ||
-            Element.prototype.msMatchesSelector;
-    }
-})();
+    });
+});

@@ -7,12 +7,12 @@
    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<header class="header">
+   <header class="header">
    <div class="header__top">
       <div class="container">
             <div class="header__top__container">
             <nav class="header__nav header-nav">
-               <div class="header-nav__item"><a href="#!">Статус ремонта</a></div>
+               <div class="header-nav__item"><a href="repair-page.html">Статус ремонта</a></div>
                <div class="header-nav__item"><a href="#!">Прайс</a></div>
                <div class="header-nav__item"><a href="#!">Новости</a></div>
             </nav>
@@ -47,28 +47,38 @@
                   <div class="menu-item">
                      <a href="#!">Ремонт</a>
                      <ul class="menu-item__submenu submenu">
-                        <li><a href="repair-page.html">Статус ремонта</a></li>
-                        <li><a href="#!">Ещё что-то</a></li>
-                        <li><a href="#!">Ещё что-то</a></li>
+                        <li><a href="#!">Гарантия</a></li>
+                        <li class="have-submenu">
+                           <a href="#!">Платно</a>
+                           <ul>
+                              <li><a href="#!">Мобильная техника</a></li>
+                              <li><a href="#!">Настольные решения</a></li>
+                              <li><a href="#!">Печатная техника</a></li>
+                              <li><a href="#!">Сетевое</a></li>
+                              <li><a href="#!">Коммерческая замена</a></li>
+                              <li><a href="#!">Работа с данными</a></li>
+                           </ul>
+                        </li>
+                        <li><a href="#!">Выезд</a></li>
+                        <li><a href="#!">Доставка</a></li>
                      </ul>
                   </div>
+
                   <div class="menu-item">
                      <a href="#!">Обслуживание</a>
                      <ul class="menu-item__submenu submenu">
-                        <li><a href="#!">Проверка</a></li>
-                        <li><a href="#!">Ещё что-то</a></li>
-                        <li><a href="#!">Ещё что-то</a></li>
+                        <li><a href="#!">Пункт 1</a></li>
                      </ul>
                   </div>
+
                   <div class="menu-item">
                      <a href="#!">Интеграции</a>
                      <ul class="menu-item__submenu submenu">
-                        <li><a href="#!">Ещё одна проверка</a></li>
-                        <li><a href="#!">Ещё что-то</a></li>
-                        <li><a href="#!">Ещё что-то</a></li>
+                        <li><a href="#!">Пункт 1</a></li>
                      </ul>
                   </div>
-                  <div class="menu-item"><a href="#!">Контакты</a></div>
+
+                  <div class="menu-item"><a href="about-us.html">Контакты</a></div>
                </nav>
 
                <table class="header__contacts">
@@ -89,7 +99,7 @@
       <div class="header__banner"></div>
    </div>
 </header>
-<section class="repair-check">
+   <section class="repair-check">
    <div class="repair-check__container">
       <h3 class="repair-check__title">Проверка статуса ремонта</h3>
 
@@ -107,7 +117,7 @@
       </form>
    </div>
 </section>
-<div class="news">
+   <div class="news">
    <div class="container">
       <h3 class="news__title"><a href="#!">Новости</a></h3>
       <div class="news__posts">
@@ -139,7 +149,30 @@
       </div>
    </div>
 </div>
-<footer class="footer">
+   <div class="popup" id="repairPopup">
+   <div class="popup__body">
+      <div class="popup__content repair-popup__content">
+         <a href="#!" class="popup__close">
+            <svg width="17" height="14" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <line x1="15.9994" y1="13.2387" x2="0.678518" y2="0.382982" stroke="#486F7F"/>
+               <line x1="15.6422" y1="0.383022" x2="0.321306" y2="13.2388" stroke="#486F7F"/>
+            </svg>
+         </a>
+         <h3 class="repair-popup__title">Оставить заявку на ремонт</h3>
+
+         <form class="repair-popup__form" id="repairPopupForm">
+            <input type="text" id="userName" name="userName" placeholder="ИМЯ">
+            <input type="tel" id="userPhone" name="userPhone" placeholder="ТЕЛЕФОН">
+            <input type="text" id="userModel" name="userModel" placeholder="МОДЕЛЬ УСТРОЙСТВА">
+            <textarea placeholder="НЕИСПРАВНОСТЬ" id="userMessage" name="userMessage"></textarea>
+            <input type="button" value="ОСТАВИТЬ ЗАЯВКУ" id="sendRepairPopupForm">
+         </form>
+
+         <div class="repair-popup__description">Оставьте заявку и мы с вами свяжемся!</div>
+      </div>
+   </div>
+</div>
+   <footer class="footer">
    <div class="container">
       <div class="footer__container">
          <div class="footer__info">
