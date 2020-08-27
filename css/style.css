@@ -431,6 +431,31 @@ body {
   clear: both;
 }
 
+.title {
+  text-align: center;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #174153;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.title::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 32px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 100px;
+  height: 1px;
+  background-color: #568AA6;
+}
+
 .header {
   margin-bottom: 100px;
 }
@@ -573,8 +598,8 @@ body {
 }
 
 .header__logo img {
-  width: 138px;
-  height: 79px;
+  width: 107px;
+  height: 98px;
 }
 
 .menu {
@@ -700,7 +725,7 @@ body {
 
 .submenu > li > ul {
   position: absolute;
-  right: -160%;
+  right: -159%;
   top: 0;
   padding: 5px 10px;
   background: rgba(255, 255, 255, 0.7);
@@ -922,8 +947,8 @@ body {
 }
 
 .footer__logo {
-  width: 110px;
-  height: 70px;
+  width: 107px;
+  height: 98px;
   margin-bottom: 15px;
 }
 
@@ -1483,6 +1508,140 @@ body {
 .cup {
   float: right;
   margin-left: 30px;
+}
+
+.warranty-repair {
+  margin-bottom: 100px;
+}
+
+.warranty-repair__container {
+  display: grid;
+  grid-template-columns: 2fr 10fr;
+  -webkit-column-gap: 20px;
+     -moz-column-gap: 20px;
+          column-gap: 20px;
+}
+
+.warranty-repair__image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.warranty-repair__text {
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 24px;
+  color: #576063;
+  text-indent: 70px;
+}
+
+.warranty-table {
+  margin-bottom: 100px;
+}
+
+.warranty-table__container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 50px;
+  margin-bottom: 40px;
+}
+
+.warranty-table__item__title {
+  display: inline-block;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  color: #174153;
+  position: relative;
+  cursor: pointer;
+}
+
+.warranty-table__item__title::after {
+  content: '';
+  display: block;
+  width: 10px;
+  height: 10px;
+  border: 1px solid #174153;
+  border-bottom: none;
+  border-left: none;
+  position: absolute;
+  top: 50%;
+  right: -20px;
+  -webkit-transform: rotate(-45deg) translateY(-50%);
+      -ms-transform: rotate(-45deg) translateY(-50%);
+          transform: rotate(-45deg) translateY(-50%);
+  -webkit-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.warranty-table__item__title.active:after {
+  -webkit-transform: rotate(135deg);
+      -ms-transform: rotate(135deg);
+          transform: rotate(135deg);
+  top: 2px;
+}
+
+.warranty-table__item ul {
+  max-height: 0;
+  visibility: hidden;
+  opacity: 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 20px;
+  color: #576063;
+  -webkit-transition: all .4s ease;
+  -o-transition: all .4s ease;
+  transition: all .4s ease;
+  position: relative;
+}
+
+.warranty-table__item ul::before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 63px;
+  border-bottom: 1px solid #568AA6;
+  -webkit-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+.warranty-table__item ul.active {
+  visibility: visible;
+  opacity: 1;
+  margin: 15px 0;
+  max-height: 15rem;
+}
+
+.warranty-table__view-all {
+  display: block;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 14px;
+  text-transform: uppercase;
+  text-align: center;
+  color: #174153;
+  -webkit-transition: color .3s ease;
+  -o-transition: color .3s ease;
+  transition: color .3s ease;
+}
+
+.warranty-table__view-all:hover {
+  color: #236580;
 }
 
 @media (max-width: 767.98px) {

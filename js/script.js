@@ -279,3 +279,13 @@ $("#sendRepairPopupForm").on("click", function () {
         }
     });
 });
+const warrantyTableItems = document.querySelectorAll('.warranty-table__item');
+
+for (let i = 0; i < warrantyTableItems.length; i++) {
+    const item = [...warrantyTableItems[i].children]
+    item[0].addEventListener('click', () => {
+        item[0].classList.toggle('active');
+        item[1].classList.toggle('active');
+    })
+}
+
