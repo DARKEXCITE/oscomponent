@@ -285,15 +285,20 @@ for (let i = 0; i < warrantyTableItems.length; i += 1) {
     const item = [...warrantyTableItems[i].children]
     item[0].addEventListener('click', () => {
         for (let j = 0; j < warrantyTableItems.length; j += 1) {
-            const item = [...warrantyTableItems[j].children]
-            if (item[0].classList.contains('active')) {
-                item[0].classList.remove('active');
-                item[1].classList.remove('active');
+            if (j !== i) {
+                const otherItem = [...warrantyTableItems[j].children]
+
+                if (otherItem[0].classList.contains('active')) {
+                    otherItem[0].classList.remove('active');
+                    otherItem[1].classList.remove('active');
+                }
             }
         }
 
-        item[0].classList.toggle('active');
-        item[1].classList.toggle('active');
+        setTimeout(() => {
+            item[0].classList.toggle('active');
+            item[1].classList.toggle('active');
+        }, 200)
     })
 }
 
