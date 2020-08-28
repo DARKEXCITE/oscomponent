@@ -281,9 +281,17 @@ $("#sendRepairPopupForm").on("click", function () {
 });
 const warrantyTableItems = document.querySelectorAll('.warranty-table__item');
 
-for (let i = 0; i < warrantyTableItems.length; i++) {
+for (let i = 0; i < warrantyTableItems.length; i += 1) {
     const item = [...warrantyTableItems[i].children]
     item[0].addEventListener('click', () => {
+        for (let j = 0; j < warrantyTableItems.length; j += 1) {
+            const item = [...warrantyTableItems[j].children]
+            if (item[0].classList.contains('active')) {
+                item[0].classList.remove('active');
+                item[1].classList.remove('active');
+            }
+        }
+
         item[0].classList.toggle('active');
         item[1].classList.toggle('active');
     })
